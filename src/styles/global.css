@@ -1,0 +1,154 @@
+/* global.css - Global styles for Astro.js */
+
+:root {
+    /* Color Variables */
+
+    --color-primary: #222228; /* Primary color */
+    --color-secondary: #F4F4F4; /* Secondary color */
+    --color-accent: #64CCC5; /* Accent color */
+    --color-background: #0C0C0C; /* Background color */
+    --color-text-primary: #FFFFFF; /* Primary text color */
+    --color-text-secondary: #222228; /* Secondary text color */
+    --color-border: #e0e0e0; /* Border color */
+
+
+      /*
+      Nightsky-Black: #222228;
+      gradientStart: #FF9898;
+      gradientEnd: #8054FF;
+      */
+  
+    /* Typography Variables */
+    font-size: 16px; /* Root font size, rem reference*/
+
+    --font-family-base: 'Roboto', Arial, sans-serif; /* Base font family */
+    --font-size-small: 0.875rem; /* Small text size 14px */
+    --font-size-base: 1rem; /* Base font size */
+    --font-size-large: 1.125rem; /* Large text size */
+    --line-height-base: 1.5; /* Base line height */
+  
+    /* Spacing Variables */
+    --spacing-xs: 0.25rem;  /* Extra small spacing */
+    --spacing-sm: 0.5rem;  /* Small spacing */
+    --spacing-md: 1rem; /* Medium spacing 16px */
+    --spacing-lg: 1.5rem; /* Large spacing */
+    --spacing-xl: 2rem; /* Extra large spacing */
+  
+    /* Border Radius */
+    --border-radius: 35px; /* Global border radius */
+  
+    /* Shadows */
+    /*--box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Global box shadow */
+
+}
+
+/* Base Styles */
+html, body {
+  
+  width: clamp(600px, 100%, 1440px);
+
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* Animations */
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+main
+{  
+  width: clamp(600px, 100%, 1440px);
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+margin: 0;
+font-weight: bold;
+color: var(--color-text-primary);
+}
+
+p {
+    margin: var(--spacing-md) 0;
+    color: var(--color-text-secondary);
+}
+  
+/* Links */
+a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.5s ease;    
+    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+  
+a:hover {
+  /*text-decoration: underline;*/
+  transition: background-color 0.25s ease, color 0.5s ease;
+  color: var(--color-text-secondary);
+}
+
+  /* Buttons */
+button {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    padding: 0.75rem var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--color-primary);
+    color: #ffffff;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-text-secondary);
+}
+  
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .margin-top {
+    margin-top: var(--spacing-lg);
+  }
+  
+  .margin-bottom {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .light-mode
+  { 
+    background-color: var(--color-secondary);
+    color: var(--color-text-secondary)    
+  }
+
+  .dark-mode
+  {
+    
+    background-color: var(--color-primary);
+    color: var(--color-text-primary)   
+  }
+  
