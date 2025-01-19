@@ -24,7 +24,10 @@
     --font-family-base: 'Roboto', Arial, sans-serif; /* Base font family */
     --font-size-small: 0.875rem; /* Small text size 14px */
     --font-size-base: 1rem; /* Base font size */
-    --font-size-large: 1.125rem; /* Large text size */
+    --font-size-large: 1.25rem; /* Large text size */
+
+    --font-size-h1: 4rem; /* Large heading size */
+
     --line-height-base: 1.5; /* Base line height */
   
     /* Spacing Variables */
