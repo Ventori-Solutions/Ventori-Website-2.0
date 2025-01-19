@@ -1,9 +1,21 @@
 ---
-const {title = 'Click Me!'} = Astro.props;
+import { Image } from "astro:assets";
+import Arrow from '../../assets/Icons/arrow-right.png'
+
+const {title = 'Click Me!', link} = Astro.props;
+
+
 ---
 
 
-<button class="btn-animated">{title}</button>
+<a href={link}>
+    <button class="btn-animated">
+        <span style="display: flex; align-items: center;">
+            <Image src={Arrow} class="btn-icon" alt="arrow icon" />
+            <span class="btn-text">{title}</span>
+        </span>
+    </button>
+</a>
 
 <style>
     .btn-animated{
@@ -23,7 +35,6 @@ const {title = 'Click Me!'} = Astro.props;
         position: absolute;
         height: 100%;
         width: 0%;
-        /* background-color: var(--color-secondary); */
         opacity: 1;
         top: 0;
         left: 0;
@@ -41,6 +52,15 @@ const {title = 'Click Me!'} = Astro.props;
         /*
         background-color: var(--color-accent); 
         */
+    }
+
+    .btn-icon{
+        width: var(--font-size-1);
+        height: var(--font-size-1);
+        padding-right: 5px;        
+    }
+    .btn-text{
+        white-space: nowrap;
     }
 
     @keyframes gradientShift {
