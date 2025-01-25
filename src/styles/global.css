@@ -52,11 +52,11 @@
     --line-height-base: 1.5; /* Base line height */
   
     /* Spacing Variables */
-    --spacing-xs: 0.25rem;  /* Extra small spacing */
-    --spacing-sm: 0.5rem;  /* Small spacing */
-    --spacing-md: 1rem; /* Medium spacing 16px */
-    --spacing-lg: 1.5rem; /* Large spacing */
-    --spacing-xl: 2rem; /* Extra large spacing */
+    --spacing--2: 0.25rem;  /* Extra small spacing */
+    --spacing--1: 0.5rem;  /* Small spacing */
+    --spacing-0: 1rem; /* Medium spacing 16px */
+    --spacing-1: 1.5rem; /* Large spacing */
+    --spacing-2: 2rem; /* Extra large spacing */
   
     /* Border Radius */
     --border-radius: 35px; /* Global border radius */
@@ -102,7 +102,7 @@ color: var(--color-text-primary);
 }
 
 p {
-    margin: var(--spacing-md) 0;
+    margin: var(--spacing-0);
     color: var(--color-text-secondary);
 }
   
@@ -111,7 +111,7 @@ a {
     color: var(--color-text-primary);
     text-decoration: none;
     transition: background-color 0.25s ease, color 0.5s ease;    
-    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing--1) var(--spacing-0) var(--spacing--1) var(--spacing-0);
     border-radius: var(--border-radius);
 }
   
@@ -126,7 +126,7 @@ button {
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
     font-weight: 500;
-    padding: 0.75rem var(--spacing-md);
+    padding: 0.75rem var(--spacing-0);
     border: none;
     border-radius: var(--border-radius);
     background-color: var(--color-primary);
@@ -145,7 +145,7 @@ button:hover {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-0);
   }
   
   .hidden {
@@ -157,11 +157,11 @@ button:hover {
   }
   
   .margin-top {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-1);
   }
   
   .margin-bottom {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-1);
   }
 
   .light-mode
