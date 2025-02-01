@@ -1,6 +1,6 @@
 ---
 import Image from 'astro/components/Image.astro'
-import Logo from '../../assets/astro/astro.svg'
+import Logo from '../../assets/Logos/Ventori-logo-title-horizontal.png'
 import ButtonAnimated from '../Buttons/Button-Fill-Side.astro'
 
 import Navigation from '../Navigation/Navigation.astro'
@@ -14,9 +14,9 @@ const links = [
 ---
 
 <header class="main-header">
-    <Image src={Logo} alt="Company Logo" />
+    <a href="http://localhost:4321/"><Image class="header-logo" src={Logo} alt="Company Logo"/></a>
     <Navigation links={links}/>
-    <ButtonAnimated title="Get your Quote"/>
+    <ButtonAnimated title="Get your Quote" link="http://localhost:4321/"/>
 </header>
 
 
@@ -25,7 +25,13 @@ const links = [
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-md);
-        width:  clamp(600px, 75%, 1440px);        
+        padding: var(--spacing-0);
+        width:  clamp(300px, 80%, 1440px);       
+    }
+
+    .header-logo{
+        max-height: var(--font-size-4);
+        width: auto;
+        height: auto;
     }
 </style>

@@ -22,20 +22,41 @@
     font-size: 16px; /* Root font size, rem reference*/
 
     --font-family-base: 'Roboto', Arial, sans-serif; /* Base font family */
-    --font-size-small: 0.875rem; /* Small text size 14px */
-    --font-size-base: 1rem; /* Base font size */
+    
+    /*
+    --font-size-small: 0.875rem; /* Small text size 14px *
+    --font-size-base: 1rem; /* Base font size *
     --font-size-large: 1.25rem; /* Large text size */
+
+    /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1440,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    /* Step -2: 12.5px → 11.52px */
+    --font-size--2: clamp(0.72rem, 0.7988rem + -0.0875vw, 0.7813rem);
+    /* Step -1: 15px → 14.4px */
+    --font-size--1: clamp(0.9rem, 0.9482rem + -0.0536vw, 0.9375rem);
+    /* Step 0: 18px → 18px */
+    --font-size-0: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
+    /* Step 1: 21.6px → 22.5px */
+    --font-size-1: clamp(1.35rem, 1.3339rem + 0.0804vw, 1.4063rem);
+    /* Step 2: 25.92px → 28.125px */
+    --font-size-2: clamp(1.62rem, 1.5806rem + 0.1969vw, 1.7578rem);
+    /* Step 3: 31.104px → 35.1563px */
+    --font-size-3: clamp(1.944rem, 1.8716rem + 0.3618vw, 2.1973rem);
+    /* Step 4: 37.3248px → 43.9453px */
+    --font-size-4: clamp(2.3328rem, 2.2146rem + 0.5911vw, 2.7466rem);
+    /* Step 5: 44.7898px → 54.9316px */
+    --font-size-5: clamp(2.7994rem, 2.6183rem + 0.9055vw, 3.4332rem);
+
 
     --font-size-h1: 4rem; /* Large heading size */
 
     --line-height-base: 1.5; /* Base line height */
   
     /* Spacing Variables */
-    --spacing-xs: 0.25rem;  /* Extra small spacing */
-    --spacing-sm: 0.5rem;  /* Small spacing */
-    --spacing-md: 1rem; /* Medium spacing 16px */
-    --spacing-lg: 1.5rem; /* Large spacing */
-    --spacing-xl: 2rem; /* Extra large spacing */
+    --spacing--2: 0.25rem;  /* Extra small spacing */
+    --spacing--1: 0.5rem;  /* Small spacing */
+    --spacing-0: 1rem; /* Medium spacing 16px */
+    --spacing-1: 1.5rem; /* Large spacing */
+    --spacing-2: 2rem; /* Extra large spacing */
   
     /* Border Radius */
     --border-radius: 35px; /* Global border radius */
@@ -51,7 +72,8 @@ html, body {
   width: clamp(600px, 100%, 1440px);
 
   font-family: var(--font-family-base);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-0);
+  font-weight: 500;
   line-height: var(--line-height-base);
   color: var(--color-text-primary);
   background-color: var(--color-background);
@@ -80,7 +102,7 @@ color: var(--color-text-primary);
 }
 
 p {
-    margin: var(--spacing-md) 0;
+    margin: var(--spacing-0);
     color: var(--color-text-secondary);
 }
   
@@ -89,7 +111,7 @@ a {
     color: var(--color-text-primary);
     text-decoration: none;
     transition: background-color 0.25s ease, color 0.5s ease;    
-    padding: var(--spacing-sm) var(--spacing-md) var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing--1) var(--spacing-0) var(--spacing--1) var(--spacing-0);
     border-radius: var(--border-radius);
 }
   
@@ -104,7 +126,7 @@ button {
     font-family: var(--font-family-base);
     font-size: var(--font-size-base);
     font-weight: 500;
-    padding: 0.75rem var(--spacing-md);
+    padding: 0.75rem var(--spacing-0);
     border: none;
     border-radius: var(--border-radius);
     background-color: var(--color-primary);
@@ -123,7 +145,7 @@ button:hover {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-0);
   }
   
   .hidden {
@@ -135,11 +157,11 @@ button:hover {
   }
   
   .margin-top {
-    margin-top: var(--spacing-lg);
+    margin-top: var(--spacing-1);
   }
   
   .margin-bottom {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-1);
   }
 
   .light-mode
