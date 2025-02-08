@@ -1,75 +1,68 @@
 /* global.css - Global styles for Astro.js */
 
 :root {
-    /* Color Variables */
+
+    /* === Color Variables === */
 
     --color-primary: #222228; /* Primary color */
     --color-secondary: #F4F4F4; /* Secondary color */
     --color-accent: #64CCC5; /* Accent color */
+    
     --color-background: #0C0C0C; /* Background color */
+    --color-background2: #F4F4F4; /* Background color */
+    --color-border: #0C0C0C; /* Border color */
+
     --color-text-primary: #FFFFFF; /* Primary text color */
     --color-text-secondary: #222228; /* Secondary text color */
-    --color-border: #e0e0e0; /* Border color */
 
-
-      /*
-      Nightsky-Black: #222228;
-      gradientStart: #FF9898;
-      gradientEnd: #8054FF;
-      */
-  
-    /* Typography Variables */
-    font-size: 16px; /* Root font size, rem reference*/
-
-    --font-family-base: 'Roboto', Arial, sans-serif; /* Base font family */
-    
     /*
-    --font-size-small: 0.875rem; /* Small text size 14px *
-    --font-size-base: 1rem; /* Base font size *
-    --font-size-large: 1.25rem; /* Large text size */
+    Nightsky-Black: #222228;
+    gradientStart: #FF9898;
+    gradientEnd: #8054FF;
+    */
+
+    /* === Breakpoints === */
+  --breakpoint-mobile: 768px;
+  --breakpoint-tablet: 1024px;
+  --breakpoint-desktop: 1280px;
+  
+    /* === Typography Variables === */
+
+    font-size: 16px; /* Root font size, rem reference*/
+    --font-family-base: 'Roboto', Arial, sans-serif; /* Base font family */  
+    --line-height-base: 1.5; /* Base line height */  
 
     /* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1440,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-    /* Step -2: 12.5px → 11.52px */
-    --font-size--2: clamp(0.72rem, 0.7988rem + -0.0875vw, 0.7813rem);
-    /* Step -1: 15px → 14.4px */
-    --font-size--1: clamp(0.9rem, 0.9482rem + -0.0536vw, 0.9375rem);
-    /* Step 0: 18px → 18px */
-    --font-size-0: clamp(1.125rem, 1.125rem + 0vw, 1.125rem);
-    /* Step 1: 21.6px → 22.5px */
-    --font-size-1: clamp(1.35rem, 1.3339rem + 0.0804vw, 1.4063rem);
-    /* Step 2: 25.92px → 28.125px */
-    --font-size-2: clamp(1.62rem, 1.5806rem + 0.1969vw, 1.7578rem);
-    /* Step 3: 31.104px → 35.1563px */
-    --font-size-3: clamp(1.944rem, 1.8716rem + 0.3618vw, 2.1973rem);
-    /* Step 4: 37.3248px → 43.9453px */
-    --font-size-4: clamp(2.3328rem, 2.2146rem + 0.5911vw, 2.7466rem);
-    /* Step 5: 44.7898px → 54.9316px */
-    --font-size-5: clamp(2.7994rem, 2.6183rem + 0.9055vw, 3.4332rem);
+    --font-size--2: clamp(0.72rem, 0.7988rem + -0.0875vw, 0.7813rem); /* Step -2: 12.5px → 11.52px */
+    --font-size--1: clamp(0.9rem, 0.9482rem + -0.0536vw, 0.9375rem); /* Step -1: 15px → 14.4px */ 
+    --font-size-0: clamp(1.125rem, 1.125rem + 0vw, 1.125rem); /* Step 0: 18px → 18px */
+    --font-size-1: clamp(1.35rem, 1.3339rem + 0.0804vw, 1.4063rem); /* Step 1: 21.6px → 22.5px */
+    --font-size-2: clamp(1.62rem, 1.5806rem + 0.1969vw, 1.7578rem); /* Step 2: 25.92px → 28.125px */
+    --font-size-3: clamp(1.944rem, 1.8716rem + 0.3618vw, 2.1973rem); /* Step 3: 31.104px → 35.1563px */
+    --font-size-4: clamp(2.3328rem, 2.2146rem + 0.5911vw, 2.7466rem); /* Step 4: 37.3248px → 43.9453px */
+    --font-size-5: clamp(2.7994rem, 2.6183rem + 0.9055vw, 3.4332rem); /* Step 5: 44.7898px → 54.9316px */
 
-
-    --font-size-h1: 4rem; /* Large heading size */
-
-    --line-height-base: 1.5; /* Base line height */
-  
-    /* Spacing Variables */
+    /* === Spacing Variables === */
     --spacing--2: 0.25rem;  /* Extra small spacing */
     --spacing--1: 0.5rem;  /* Small spacing */
     --spacing-0: 1rem; /* Medium spacing 16px */
     --spacing-1: 1.5rem; /* Large spacing */
     --spacing-2: 2rem; /* Extra large spacing */
   
-    /* Border Radius */
-    --border-radius: 35px; /* Global border radius */
+    /* === Border Radius === */
+    --border-radius: 2rem; /* Global border radius */
   
-    /* Shadows */
-    /*--box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Global box shadow */
+    /* === Shadows === */
+    --box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* box shadow */
 
 }
 
-/* Base Styles */
-html, body {
-  
-  width: clamp(600px, 100%, 1440px);
+/* === Base Styles === */
+
+
+html, body {  
+  width: 100%;
+  min-width: 320px;
 
   font-family: var(--font-family-base);
   font-size: var(--font-size-0);
@@ -84,96 +77,185 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+
   /* Animations */
   transition: background-color 0.5s ease, color 0.5s ease;
 }
-
 main
 {  
-  width: clamp(600px, 100%, 1440px);
+  width: clamp(320px, 100%, 1440px);
   height: 100%;
-}
-
-h1, h2, h3, h4, h5, h6 {
-margin: 0;
-font-weight: bold;
-color: var(--color-text-primary);
-}
-
-p {
-    margin: var(--spacing-0);
-    color: var(--color-text-secondary);
-}
   
-/* Links */
-a {
-    color: var(--color-text-primary);
-    text-decoration: none;
-    transition: background-color 0.25s ease, color 0.5s ease;    
-    padding: var(--spacing--1) var(--spacing-0) var(--spacing--1) var(--spacing-0);
-    border-radius: var(--border-radius);
-}
-  
-a:hover {
-  /*text-decoration: underline;*/
-  transition: background-color 0.25s ease, color 0.5s ease;
-  color: var(--color-text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-  /* Buttons */
-button {
-    font-family: var(--font-family-base);
-    font-size: var(--font-size-base);
-    font-weight: 500;
-    padding: 0.75rem var(--spacing-0);
-    border: none;
-    border-radius: var(--border-radius);
-    background-color: var(--color-primary);
-    color: #ffffff;
-    cursor: pointer;
-    box-shadow: var(--box-shadow);
-    transition: background-color 0.3s ease;
-}
+/* === Responsive Typography === */
 
-button:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-text-secondary);
-}
+  h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: bold;
+  color: var(--color-text-primary);
+  }
+
+  h1 { font-size: var(--font-size-5); }
+  h2 { font-size: var(--font-size-4); }
+  h3 { font-size: var(--font-size-3); }
+  h4 { font-size: var(--font-size-2); }
+  h5 { font-size: var(--font-size-1); }
+
+  p {
+      font-size: var(--font-size-0); 
+      color: var(--color-text-secondary);
+  }
+
   
-/* Utility Classes */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-0);
+/* === Images === */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
   }
   
+/* Links */
+  a {
+      color: var(--color-text-primary);
+      text-decoration: none;
+      transition: background-color 0.25s ease, color 0.5s ease;    
+      padding: var(--spacing--1) var(--spacing-0) var(--spacing--1) var(--spacing-0);
+      border-radius: var(--border-radius);
+  }
+    
+  a:hover {
+    /*text-decoration: underline;*/
+    color: var(--color-text-secondary);
+  }
+
+/* Buttons */
+  button {
+      font-family: var(--font-family-base);
+      font-size: var(--font-size-0);
+      font-weight: 500;
+      padding: 0.75rem var(--spacing-0);
+      border: none;
+      border-radius: var(--border-radius);
+      background-color: var(--color-primary);
+      color: #ffffff;
+      cursor: pointer;
+      box-shadow: var(--box-shadow);
+      transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+      background-color: var(--color-secondary);
+      color: var(--color-text-secondary);
+  }
+  
+/* ===== Utility Classes ===== */
+  
+/* === Spacing === */
+
+  /* Width */
+  .content-width{  
+    width:  clamp(300px, 100vw, 1440px);   
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Margin */
+  .m-0 { margin: 0; }
+  .mt-1 { margin-top: 0.625rem; }  /* 10px */
+  .mt-2 { margin-top: 1.25rem; }   /* 20px */
+  .mt-3 { margin-top: 1.875rem; }  /* 30px */
+  .mb-1 { margin-bottom: 0.625rem; }
+  .mb-2 { margin-bottom: 1.25rem; }
+  .mb-3 { margin-bottom: 1.875rem; }
+
+  .responsive-margin-vertical { margin-top: clamp(0.5rem, 2vw, 1.5rem); margin-bottom: clamp(0.5rem, 2vw, 1.5rem); }
+  .responsive-margin-horizontal { margin-left: clamp(0.5rem, 2vw, 1.5rem); margin-right: clamp(0.5rem, 2vw, 1.5rem); }
+
+  /* Padding */
+  .p-0 { padding: 0; }
+  .p-1 { padding: 0.625rem; }
+  .p-2 { padding: 1.25rem; }
+  .p-3 { padding: 1.875rem; }
+  
+
+/* === Flex === */
+  .flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+/* === Responsive Grid Layout (Optional) === */
+  .grid {
+    display: grid;
+    gap: 20px;
+  }
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: var(--breakpoint-tablet)) {
+    .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: var(--breakpoint-mobile)) {
+    .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  }
+
+
+/* === Visibility === */
   .hidden {
     display: none;
   }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  .margin-top {
-    margin-top: var(--spacing-1);
-  }
-  
-  .margin-bottom {
-    margin-bottom: var(--spacing-1);
+
+  /* Common Breakpoints: Mobile 320-779, Tablet 769-1279, Desktops 1280+*/
+  .desktop-only {
+    display: flex; /* Show on desktop */
   }
 
+  .mobile-only {
+    display: none; /* Hide on desktop */
+  }
+
+  @media screen and (max-width: var(--breakpoint-mobile)) {
+    .desktop-only {
+      display: none; /* Hide on mobile */
+    }
+
+    .mobile-only {
+      display: flex; /* Show on mobile */
+    }
+  }
+
+/* === Light/Dark Mode === */
   .light-mode
   { 
-    background-color: var(--color-secondary);
-    color: var(--color-text-secondary)    
-  }
-
-  .dark-mode
-  {
     
     background-color: var(--color-primary);
     color: var(--color-text-primary)   
   }
-  
+
+  .dark-mode
+  {
+    background-color: var(--color-secondary);
+    color: var(--color-text-secondary)    
+  }
