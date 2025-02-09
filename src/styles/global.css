@@ -1,41 +1,47 @@
 @import './variables.css';
 
-/* === Base Styles === */
+/*================================
+        ~~~ Base Stylings ~~~
+================================*/
+/*#region === Base Stylings === */
+  html, body {  
+    width: 100%;
+    min-width: 320px;
+
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-0);
+    font-weight: 500;
+    line-height: var(--line-height-base);
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    /* Animations */
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+  main
+  {  
+    width: clamp(320px, 100%, 1440px);
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+/*#endregion*/
 
 
-html, body {  
-  width: 100%;
-  min-width: 320px;
-
-  font-family: var(--font-family-base);
-  font-size: var(--font-size-0);
-  font-weight: 500;
-  line-height: var(--line-height-base);
-  color: var(--color-text-primary);
-  background-color: var(--color-background);
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  /* Animations */
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-main
-{  
-  width: clamp(320px, 100%, 1440px);
-  height: 100%;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* === Responsive Typography === */
-
+/*=======================================
+        ~~~ Responsive Typography ~~~
+=========================================*/
+/*#region === Responsive Typography === */
   h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-weight: bold;
@@ -52,16 +58,25 @@ main
       font-size: var(--font-size-0); 
       color: var(--color-text-secondary);
   }
-
+/*#endregion*/
   
-/* === Images === */
+
+/*================================
+        ~~~ Images ~~~
+================================*/
+/*#region === Images === */
   img {
     max-width: 100%;
     height: auto;
     display: block;
   }
-  
-/* Links */
+/*#endregion*/
+
+
+/*================================
+        ~~~ Links ~~~
+================================*/
+/*#region === Links === */
   a {
       color: var(--color-text-primary);
       text-decoration: none;
@@ -74,8 +89,13 @@ main
     /*text-decoration: underline;*/
     color: var(--color-text-secondary);
   }
+/*#endregion*/
 
-/* Buttons */
+
+/*================================
+        ~~~ Buttons ~~~
+================================*/
+/*#region === Buttons === */
   button {
       font-family: var(--font-family-base);
       font-size: var(--font-size-0);
@@ -94,14 +114,23 @@ main
       background-color: var(--color-secondary);
       color: var(--color-text-secondary);
   }
+/*#endregion*/
   
-/* ===== Utility Classes ===== */
-  
-/* === Spacing === */
+
+/*================================
+        ~~~ Utility Classes ~~~
+================================*/
+
+
+/*================================
+        ~~~ Spacing ~~~
+================================*/
+/*#region === Spacing === */
 
   /* Width */
   .content-width{  
-    width:  clamp(300px, 100vw, 1440px);   
+    width:  clamp(320px, 100vw, 1440px);       
+    box-sizing: border-box;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -124,9 +153,13 @@ main
   .p-1 { padding: 0.625rem; }
   .p-2 { padding: 1.25rem; }
   .p-3 { padding: 1.875rem; }
-  
+/*#endregion*/
 
-/* === Flex === */
+
+/*================================
+        ~~~ Flex ~~~
+================================*/
+/*#region === Flex === */
   .flex-column{
     display: flex;
     flex-direction: column;
@@ -140,8 +173,13 @@ main
     align-items: center;
     justify-content: center;
   }
+/*#endregion*/
 
-/* === Responsive Grid Layout (Optional) === */
+
+/*================================
+        ~~~ Responsive Grid ~~~
+================================*/
+/*#region === Responsive Grid === */
   .grid {
     display: grid;
     gap: 20px;
@@ -163,9 +201,13 @@ main
   @media (max-width: var(--breakpoint-mobile)) {
     .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
   }
+/*#endregion*/
 
 
-/* === Visibility === */
+/*================================
+        ~~~ Visbility ~~~
+================================*/
+/*#region === Visbility === */
   .hidden {
     display: none;
   }
@@ -179,7 +221,7 @@ main
     display: none; /* Hide on desktop */
   }
 
-  @media screen and (max-width: var(--breakpoint-mobile)) {
+  @media screen and (max-width: 768px) {
     .desktop-only {
       display: none; /* Hide on mobile */
     }
@@ -188,8 +230,14 @@ main
       display: flex; /* Show on mobile */
     }
   }
+/*#endregion*/
 
-/* === Light/Dark Mode === */
+
+/*================================
+        ~~~ Light/Dark Mode ~~~
+================================*/
+/*#region === Light/Dark Mode === */
+
   .light-mode
   { 
     
@@ -202,3 +250,5 @@ main
     background-color: var(--color-secondary);
     color: var(--color-text-secondary)    
   }
+
+/*#endregion*/
